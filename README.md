@@ -314,6 +314,130 @@ public class ProjectsDao extends DaoBase {
 		
 	}
 
+ package Project7.entity;
+
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+import java.util.Objects;
+import java.util.LinkedList;
+/**
+ * @author Jose
+ *
+ */
+public class Project {
+private Integer project_id;
+private String projectsName;
+private LocalTime estimatedHours;
+@Override
+public String toString() {
+ DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd-MM-YYYY HH:mm");
+ String createTime = Objects.nonNull(createdAt) ? fmt.format(createdAt) : "(null)";
+	
+ String project = "";
+ 
+ project += "\n    ID=" + project_id;
+ project += "\n    projectName" + projectsName;
+ project += "\n    notes=" + notes;
+ project += "\n    estimatedTime=" + estimatedHours;
+ project += "\n    actualTime=" + actualHours;
+ project += "\n    createdAt=" + createTime;
+ 
+ project += "\n    material:";
+ 
+ for(Materials material : material) {
+	 project += "\n     " + material;
+		 
+ }
+ project += "\n    Steps:";
+ 
+ for(Step step :steps) {
+	 project += "\n     " + step;
+	 
+ }
+ 
+project += "\n    Categories:";
+ 
+ for(Category category : categories) {
+	 project += "\n     " + category;
+	 
+ }
+ 
+ return project;
+	
+}
+private LocalTime actualHours;
+private Integer difficulty;
+private String notes;
+private LocalDateTime createdAt;
+
+private List<Materials> material = new LinkedList<>();
+private List<Step> steps = new LinkedList<>();
+private List<Category> categories = new LinkedList<>();
+
+
+
+public Integer getProject_id() {
+	return project_id;
+}
+public void setProject_id(Integer project_id) {
+	this.project_id = project_id;
+}
+public String getProjectsName() {
+	return projectsName;
+}
+public void setProjectsName(String projectsName) {
+	this.projectsName = projectsName;
+}
+public LocalTime getEstimatedHours() {
+	return estimatedHours;
+}
+public void setEstimatedHours(LocalTime estimatedHours) {
+	this.estimatedHours = estimatedHours;
+}
+public LocalTime getActualHours() {
+	return actualHours;
+}
+public void setActualHours(LocalTime actualHours) {
+	this.actualHours = actualHours;
+}
+public Integer getDifficulty() {
+	return difficulty;
+}
+public void setDifficulty(Integer difficulty) {
+	this.difficulty = difficulty;
+}
+public String getNotes() {
+	return notes;
+}
+public void setNotes(String notes) {
+	this.notes = notes;
+}
+public LocalDateTime getCreatedAt() {
+	return createdAt;
+}
+public void setCreatedAt(LocalDateTime createdAt) {
+	this.createdAt = createdAt;
+}
+public List<Category> getCategories() {
+	return categories;
+}
+public void setCategories(List<Category> categories) {
+	this.categories = categories;
+}
+public List<Materials> getMaterial() {
+	return material;
+}
+public List<Step> getSteps() {
+	return steps;
+}
+
+
+
+	
+}
+
 }
 
 

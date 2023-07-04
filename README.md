@@ -1,6 +1,7 @@
 "# Week9Poroject" 
 /** 
 video: https://drive.google.com/file/d/1VjcRN-qJweMzTf4nu-shNUxfBeZqTv_M/view?usp=sharing
+https://github.com/Jballeno/Week9Poroject/blob/main/README.md?plain=1
  * 
  */
 package Project7.dao;

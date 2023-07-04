@@ -314,8 +314,6 @@ public class ProjectsDao extends DaoBase {
 		
 	}
 
- 
-
  package Project7.entity;
 
 import java.time.LocalDateTime;
